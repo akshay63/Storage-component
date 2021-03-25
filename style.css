@@ -1,0 +1,199 @@
+/*------ Base styles --------*/
+:root {
+  --color-p-gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+
+  --color-n-pale-blue: hsl(243, 100%, 93%);
+  --color-n-gray-blue: hsl(229, 7%, 55%);
+  --color-n-dark-blue: hsl(228, 56%, 26%);
+  --color-n-vdark-blue: hsl(229, 57%, 11%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherits;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 71.42%;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
+  background-color: var(--color-n-vdark-blue);
+  background-image: url(images/bg-desktop.png);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*------ Component -------*/
+.fylo-component {
+  display: grid;
+  grid-template-columns: 30.4rem 47.4rem;
+  gap: 2.7rem;
+  margin-top: -2rem;
+}
+/*Left-part*/
+.left-part {
+  background-color: var(--color-n-dark-blue);
+  padding: 3.4rem;
+  border-radius: 1rem;
+  border-top-right-radius: 8.5rem;
+}
+
+.file-options {
+  display: flex;
+}
+
+.logo {
+  margin-bottom: 2.7rem;
+}
+
+.box {
+  border-radius: 1rem;
+  background-color: var(--color-n-vdark-blue);
+}
+
+.box:hover {
+  background: #fff;
+  cursor: pointer;
+}
+
+.box:not(:last-child) {
+  margin-right: 1.4rem;
+}
+
+.box1 {
+  padding: 1rem 1.2rem;
+  padding-bottom: 0.7rem;
+}
+.box2 {
+  padding: 1.2rem 1rem;
+  padding-bottom: 0.7rem;
+}
+.box3 {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1.2rem;
+}
+
+/*Right-part*/
+.wrapper {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.right-part {
+  padding: 3.3rem;
+  width: 100%;
+  background-color: var(--color-n-dark-blue);
+  border-radius: 6px;
+}
+
+p,
+span {
+  color: #fff;
+}
+
+.storage-status {
+  font-size: 1.3rem;
+  margin-bottom: 1.3rem;
+}
+
+.storage-status > span {
+  font-weight: 700;
+}
+
+.bar-box {
+  padding: 2.57px;
+  margin-bottom: 0.6rem;
+  background-color: var(--color-n-vdark-blue);
+  border-radius: 6rem;
+}
+
+.bar {
+  padding: 2.57px;
+  width: 73%;
+  border-radius: 6rem;
+  background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  display: flex;
+  justify-content: flex-end;
+}
+
+.current-level {
+  border-radius: 100%;
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: #fff;
+}
+
+.storage-range {
+  display: flex;
+  justify-content: space-between;
+}
+.storage-range > span {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.popup-box {
+  padding: 0.8rem 2.3rem;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  right: 3.5rem;
+  z-index: 1;
+  border-radius: 1rem;
+  border-bottom-right-radius: 0;
+}
+
+.popup-box p {
+  color: var(--color-n-vdark-blue);
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 0.8rem;
+  width: 100%;
+}
+.popup-box span {
+  font-size: 1.1rem;
+  color: var(--color-n-gray-blue);
+}
+/*------ Media Queries ---------*/
+@media only screen and (max-width: 1000px) {
+  .fylo-component {
+    grid-template-columns: 45rem;
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    background-image: url(images/bg-mobile.png);
+    background-size: cover;
+  }
+
+  .fylo-component {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, min-content);
+    gap: 1rem;
+  }
+
+  .popup-box {
+    transform: translate(-20%, 170%);
+    border-radius: 1rem;
+  }
+}
